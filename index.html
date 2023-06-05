@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu hover 3d effect</title>
+</head>
+
+<style>
+    *,::before,::after{
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+    }
+    html{
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .list__links{
+        display: flex;
+        gap: 1.5rem;
+    }
+    .container .list__links .link{
+        list-style: none;
+        position: relative;
+    }
+    .container .list__links a{
+        font-size: 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+    }
+
+    .container .list__links .link::before{
+        content: '';
+        position: absolute;
+        bottom: -.3rem;
+        left: 0;
+        width: 0;
+        height: .3rem;
+        background-color: #ff07d1;
+        transition: all .4s ease-out;
+    }
+    .container .list__links .link::after{
+        content: '';
+        position: absolute;
+        bottom: -.3rem;
+        right: 0;
+        width: 0;
+        height: .3rem;
+        background-color: #074dff;
+        transition: all .4s ease-out;
+    }
+
+    .container .list__links .link:hover::before{
+        left: 50%;
+        width: 50%;
+    }
+    .container .list__links .link:hover::after{
+        right: 50%;
+        width: 50%;
+    }
+
+  
+
+</style>
+
+<body>
+    <div class="container">
+        <ul class="list__links">
+            <li class="link">
+                <a href="#">home</a>
+            </li>
+            <li class="link">
+                <a href="#">about</a>
+            </li>
+            <li class="link">
+                <a href="#">services</a>
+            </li>
+            <li class="link">
+                <a href="#">contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
